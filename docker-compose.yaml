@@ -1,0 +1,11 @@
+version: "3.4"
+services:
+  cpuminer1:
+    build: .
+    tty: true
+    entrypoint: ./cpuminer -a mtp -o stratum+tcp://mtp.eu.mine.zergpool.com:3000 -u a14QMHpYwPmPbmedoqP1aUGhPXwyextmQw.NODE1 -p c=XZC
+
+  cpuminer2:
+    build: .
+    tty: true
+    entrypoint: ./cpuminer -a mtp -o stratum+tcp://mtp.eu.mine.zergpool.com:3000 -u a14QMHpYwPmPbmedoqP1aUGhPXwyextmQw.NODE2 -p c=XZC
