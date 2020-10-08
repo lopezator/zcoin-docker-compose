@@ -4,7 +4,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends automake autoco
     pkg-config libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev make g++ \
     zlib1g-dev git ca-certificates
 
-RUN git clone https://github.com/zcoinofficial/cpuminer.git
-WORKDIR cpuminer
-RUN chmod +x autogen.sh build.sh
-RUN ./build.sh
+RUN apt-get update && apt-get install -y --no-install-recommends git build-essential \
+    cmake libuv1-dev libssl-dev libhwloc-dev
+RUN git clone https://github.com/xmrig/xmrig.git
+WORKDIR xmrig
+RUN mkdir xmrig/build
+RUN cmake .
+RUN make -j$(nproc)
+

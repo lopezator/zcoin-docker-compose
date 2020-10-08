@@ -2,10 +2,8 @@ version: "3.4"
 services:
   cpuminer1:
     build: .
-    tty: true
-    entrypoint: ./cpuminer -a mtp -o stratum+tcp://mtp.eu.mine.zergpool.com:3000 -u a14QMHpYwPmPbmedoqP1aUGhPXwyextmQw.NODE1 -p c=XZC
+    entrypoint: ./xmrig --donate-level 1 -o pool.hashvault.pro:443 -u 86AvHEJ6ZRTQBnNdQBAYC6KXoZNN8hwJfXXcrUZfs5fSYd6Lgb9kbDgNGYVE2dhsn4BHQcfYE9SxpeTHEij7B6LVSNvVF6D -p node1 -k --tls
 
   cpuminer2:
     build: .
-    tty: true
-    entrypoint: ./cpuminer -a mtp -o stratum+tcp://mtp.eu.mine.zergpool.com:3000 -u a14QMHpYwPmPbmedoqP1aUGhPXwyextmQw.NODE2 -p c=XZC
+    entrypoint: ./xmrig --donate-level 1 -o pool.hashvault.pro:443 -u 86AvHEJ6ZRTQBnNdQBAYC6KXoZNN8hwJfXXcrUZfs5fSYd6Lgb9kbDgNGYVE2dhsn4BHQcfYE9SxpeTHEij7B6LVSNvVF6D -p node2 -k --tls
